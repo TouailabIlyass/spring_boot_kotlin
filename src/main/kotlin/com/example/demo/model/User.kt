@@ -1,18 +1,28 @@
 package com.example.demo.model
 
+import javax.persistence.Entity
+import javax.persistence.GeneratedValue
+import javax.persistence.Id
+
+@Entity
 class User {
+    @Id
+    @GeneratedValue
+     var id:Int
      var username:String
-     var nom:String
-     var prenom:String
+     var password:String
+     var role:String
     constructor() {
+        id = 0
         username = ""
-        nom = ""
-        prenom = ""
+        password = ""
+        role = ""
     }
-    constructor(username: String, nom: String, prenom: String, prenom1: String)
+    constructor(id:Int, username: String, nom: String, password: String, role: String)
     {
+        this.id = id
         this.username = username
-        this.nom = nom
-        this.prenom = prenom
+        this.password = password
+        this.role = role
     }
 }
